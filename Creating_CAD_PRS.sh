@@ -39,7 +39,6 @@ head PRS_SNPS_maf.afreq
 #### Now perform allele harmonisation using Stata do file written for this purpose
 ##This will output a txt file called "Cleaned_GWAS_SNPs.txt" that can be used to generate the score in Plink
 
-stata-xp
 stata -b do "Harmonising_ALSPAC_Data.do"
 
 #### Use PLINK to create PRS
