@@ -1,5 +1,5 @@
-# Setup
-#------------------------------------------------------------------------------#
+# Performing a two-sample MR between education and BMI in UK Biobank using R package TwoSampleMR #
+# Work in progress - needs updating#
 
 ## The below packages need to be installed in the first instance so that the subsequent libraries can be loaded.
 
