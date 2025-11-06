@@ -27,6 +27,7 @@ for i in {01..22}; do bgenix -g filtered_${i}.bgen -incl-range /home/rmgpstc/Scr
 
 #### Move new .bgen files containing only SNPs of interest to a different folder and concatenate into a single .bgen file containing all necessary SNPs for PRS
 ## This identifies 225 SNPs out of the 241 listed in summary stats 
+## There are tools (e.g. LDlinkR) that search for proxies for missing SNPs but I didn't use that here
 
 mv chr_*.bgen /home/rmgpstc/Scratch/ALSPAC/Genotyping_data/Converted_data/
 cat-bgen -g chr_{01..22}.bgen -og /home/rmgpstc/Scratch/ALSPAC/Genotyping_data/Converted_data/PRS_SNPS.bgen
