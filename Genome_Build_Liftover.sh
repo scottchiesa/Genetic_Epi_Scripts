@@ -106,8 +106,8 @@ BED_FILE="${INPUT_FILE%.txt}.bed"
 UNMAPPED_FILE="${INPUT_FILE%.txt}_unmapped.txt"
 
 echo "Creating BED file from ${INPUT_FILE}"
-# adjust column numbers here to match your file structure! (this modified slightly from CLS code as nothing would map unless I set the start point to be -1 actual position. Read online something about 0-based coordinates but check)
-awk 'BEGIN {OFS="\t"} NR > 1 && $1 ~ /^[0-9]+$/ && $2 ~ /^[0-9]+$/ {print "chr"$1, $2-1, $2, $3}' "${INPUT_FILE}" > "${BED_FILE}"
+# adjust column numbers here to match your file structure! (this modified slightly from CLS code as nothing would map unless I set the end point (i.e. column 3) to be +1 the actual BP position due to coordinate system)
+awk 'BEGIN {OFS="\t"} NR > 1 && $1 ~ /^[0-9]+$/ && $2 ~ /^[0-9]+$/ {print "chr"$1, $2, $2+1, $3}' "${INPUT_FILE}" > "${BED_FILE}"
 
 
 echo "Running LiftOver..."
